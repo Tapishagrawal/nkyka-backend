@@ -41,7 +41,7 @@ productRouter.get("/", async (req, res) => {
 });
 productRouter.get("/all", async (req, res) => {
     try {
-        const products = await ProductModel.find({userID:req.body.userID});
+        const products = await ProductModel.find();
         return res.status(200).json({ status: "success", data: products });
     } catch (error) {
         console.error(error);
